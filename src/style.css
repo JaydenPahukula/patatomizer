@@ -1,0 +1,22 @@
+:root {
+	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+	--bg-dark-1: #101112;
+	--bg-dark-2: #282b2d;
+	--bg-dark-3: #3a3e41;
+
+	--bg-light-1: #f0f1f2
+	--bg-light-2: #d7dadc;
+	--bg-light-3: #b7bcc0;
+
+	--accent: #c985e2
+}
+
+body {
+	margin: 0;
+}
+
+#header {
+	height: 54px;
+	background-color: var(--bg-dark-1)
+}
