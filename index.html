@@ -5,13 +5,17 @@
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Vite App</title>
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-		<div id="app">
-			<header id="header"></header>
-			<div id="content">
-				<div id="sidebar"></div>
-			</div>
+		<header id="header">header</header>
+		<div id="page">
+			<load src="src/sidebar/sidebar.html" />
+			<div>content</div>
 		</div>
 		<script type="module" src="/src/main.js"></script>
 	</body>

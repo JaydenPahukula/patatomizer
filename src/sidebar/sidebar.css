@@ -1,0 +1,30 @@
+#sidebar {
+	background-color: var(--gray-1);
+	color: var(--gray-6);
+	box-shadow: rgba(0, 0, 0, 0.45) 1px 2px 8px 0px;
+	width: 350px;
+	min-width: 30%;
+}
+
+#sidebar.collapsed {
+}
+
+#sidebar-header {
+	border-bottom: solid 1px var(--gray-2);
+	padding: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+#sidebar-title {
+	color: var(--gray-7);
+	font-size: 16px;
+	margin: 0;
+	font-weight: bold;
+}
+
+#sidebar-header-menu-icon {
+	height: 24px;
+	width: 24px;
+}

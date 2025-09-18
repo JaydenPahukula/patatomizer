@@ -1,22 +1,37 @@
 :root {
-	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+	font-family: "Roboto Condensed", sans-serif;
 
-	--bg-dark-1: #101112;
-	--bg-dark-2: #282b2d;
-	--bg-dark-3: #3a3e41;
+	--gray-0: #101112;
+	--gray-1: #282b2d;
+	--gray-2: #3a3e41;
+	--gray-3: #595f64;
 
-	--bg-light-1: #f0f1f2
-	--bg-light-2: #d7dadc;
-	--bg-light-3: #b7bcc0;
+	--gray-5: #b7bcc0;
+	--gray-6: #d7dadc;
+	--gray-7: #f0f1f2;
 
-	--accent: #c985e2
+	--accent: #c985e2;
 }
 
 body {
 	margin: 0;
+	height: 100dvh;
+	display: flex;
+	flex-direction: column;
 }
 
 #header {
 	height: 54px;
-	background-color: var(--bg-dark-1)
+	background-color: var(--gray-0);
+}
+
+#page {
+	flex-grow: 1;
+	background-color: var(--gray-7);
+	display: flex;
+}
+
+svg {
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
