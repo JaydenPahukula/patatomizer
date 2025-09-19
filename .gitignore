@@ -1,4 +1,9 @@
-.direnv
 .vscode
 dist
 node_modules
+
+# nix environment
+.direnv
+.envrc
+flake.nix
+flake.lock
