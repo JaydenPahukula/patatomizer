@@ -10,7 +10,7 @@
 	--gray-6: #d7dadc;
 	--gray-7: #f0f1f2;
 
-	--accent: #c985e2;
+	--accent: #c386daff;
 }
 
 body {
@@ -18,11 +18,6 @@ body {
 	height: 100dvh;
 	display: flex;
 	flex-direction: column;
-}
-
-#header {
-	height: 54px;
-	background-color: var(--gray-0);
 }
 
 #page {
@@ -39,5 +34,9 @@ svg {
 
 button {
 	border: none;
+	cursor: pointer;
+}
+
+a {
 	cursor: pointer;
 }

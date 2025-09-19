@@ -1,0 +1,37 @@
+#header {
+	height: 54px;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	background-color: var(--gray-0);
+	gap: 8px;
+	color: var(--accent);
+}
+
+#header > .regexr-logo {
+	height: 28px;
+	width: 28px;
+	fill: var(--accent);
+}
+
+#header > h1 {
+	font-weight: normal;
+	font-size: 18px;
+	margin: 0;
+}
+
+#header > .spacer {
+	flex-grow: 1;
+}
+
+#header > a {
+	font-size: 14px;
+	transition: color 0.2s;
+	color: var(--accent); /* force */
+	text-decoration: none;
+}
+#header > a:hover,
+#header > a:active,
+#header > a:focus-visible {
+	color: var(--gray-7);
+}
