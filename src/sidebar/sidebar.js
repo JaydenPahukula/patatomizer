@@ -1,5 +1,3 @@
-import "./sidebar.css";
-
 const sidebar = document.getElementById("sidebar");
 
 function toggleSidebar() {
