@@ -29,6 +29,18 @@ body {
 	display: flex;
 }
 
+#page-content {
+	flex-grow: 1;
+}
+
+.header {
+	height: 40px;
+}
+
+#pattern-section > .header {
+	background: var(--accent);
+}
+
 svg {
 	stroke-linecap: round;
 	stroke-linejoin: round;
