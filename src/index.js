@@ -1,1 +1,1 @@
-import "./sidebar/sidebar.js";
+import './sidebar/sidebar.js';

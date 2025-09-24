@@ -1,8 +1,8 @@
-@import "./header/header.css";
-@import "./sidebar/sidebar.css";
+@import './header/header.css';
+@import './sidebar/sidebar.css';
 
 :root {
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 
 	--gray-0: #101112;
 	--gray-1: #282b2d;
