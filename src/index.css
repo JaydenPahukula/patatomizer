@@ -1,8 +1,10 @@
 @import './header/header.css';
+@import './pattern/pattern.css';
 @import './sidebar/sidebar.css';
 
 :root {
-	font-family: 'Roboto Condensed', sans-serif;
+	--font-sans: 'Roboto Condensed', sans-serif;
+	--font-mono: 'Source Code Pro', monospace;
 
 	--gray-0: #101112;
 	--gray-1: #282b2d;
@@ -13,10 +15,22 @@
 	--gray-6: #d7dadc;
 	--gray-7: #f0f1f2;
 
-	--accent: #c386daff;
+	--accent: #c386da;
+
+	--orange: #de7309;
+	--light-orange: #f2ebb3;
+	--blue: #1b91f2;
+	--green: #029e16;
+	--light-green: #ddf1e0;
+}
+
+* {
+	box-sizing: border-box;
 }
 
 body {
+	font-family: var(--font-sans);
+	color: var(--gray-0);
 	margin: 0;
 	height: 100dvh;
 	display: flex;
@@ -31,14 +45,27 @@ body {
 
 #page-content {
 	flex-grow: 1;
+	overflow: hidden;
+	width: 100%;
+}
+
+#page-content > section {
+	overflow: hidden;
+	width: 100%;
 }
 
 .header {
 	height: 40px;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	background: var(--gray-5);
 }
 
-#pattern-section > .header {
-	background: var(--accent);
+.header > h2 {
+	font-size: 16px;
+	margin: 0;
+	font-weight: bold;
 }
 
 svg {
