@@ -8,9 +8,7 @@
 		"preview": "vite preview",
 		"format": "prettier --write ."
 	},
-	"dependencies": {
-		"mumps-pattern-match": "file:../mumps-pattern-match"
-	},
+	"dependencies": {},
 	"devDependencies": {
 		"prettier": "^3.6.2",
 		"vite": "^7.1.2",

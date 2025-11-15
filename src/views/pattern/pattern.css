@@ -1,0 +1,53 @@
+#pattern-section > .header {
+	background: var(--accent);
+}
+
+#pattern-editor {
+	height: 56px;
+	width: 100%;
+	overflow-y: auto;
+	margin: 0;
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	cursor: text;
+}
+
+#pattern-input {
+	border: none;
+	outline: none;
+	margin: 0;
+	font-family: var(--font-mono);
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#pattern-question-mark {
+	font-family: var(--font-mono);
+	font-size: 16px;
+	font-weight: bold;
+	color: var(--gray-5);
+	user-select: none;
+}
+
+.pattern-outline {
+	outline: 2px solid var(--gray-5);
+}
+
+.ast-strlit-node {
+	color: var(--orange);
+	/* background: var(--light-orange); */
+}
+
+.ast-patcode-node {
+	color: var(--orange);
+}
+
+.ast-repcount-node {
+	color: var(--blue);
+}
+
+.ast-alternation-node {
+	color: var(--green);
+	background: var(--light-green);
+}

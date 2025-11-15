@@ -1,6 +1,6 @@
-@import './header/header.css';
-@import './pattern/pattern.css';
-@import './sidebar/sidebar.css';
+@import './views/header/header.css';
+@import './views/pattern/pattern.css';
+@import './views/sidebar/sidebar.css';
 
 :root {
 	--font-sans: 'Roboto Condensed', sans-serif;
