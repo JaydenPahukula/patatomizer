@@ -1,0 +1,54 @@
+@top Pattern { "?" Patgrp }
+
+Patgrp {
+  Patatom+
+}
+
+Patatom {
+  Repcount
+  (
+    Patcode |
+    Strlit |
+    Alternation
+  )
+}
+
+Repcount {
+  Number |
+  Number? "." Number?
+}
+
+Alternation {
+  "(" Patgrp ("," Patgrp)* ")"
+}
+
+Strlit {
+  "\"" (strchar | Escdoublequote)* "\""
+}
+
+@tokens {
+
+  Patcode {
+    "a" |
+    "A" |
+    "u" |
+    "U" |
+    "l" |
+    "L" |
+    "n" |
+    "N" |
+    "p" |
+    "P" |
+    "c" |
+    "C" |
+    "e" |
+    "E"
+  }
+
+  Number { $[0-9]+ }
+
+  strchar { ![\"] }
+
+  Escdoublequote { "\"\"" }
+
+}

@@ -2,52 +2,39 @@
 	background: var(--accent);
 }
 
-#pattern-editor {
-	height: 56px;
+#pattern-editor-parent {
+	height: 60px;
 	width: 100%;
-	overflow-y: auto;
-	margin: 0;
-	padding: 0 24px;
-	display: flex;
-	align-items: center;
-	cursor: text;
+	font-family: var(--font-mono);
+	font-size: 16px;
+	font-weight: bold;
 }
 
-#pattern-input {
-	border: none;
+#pattern-editor-parent > .cm-editor {
+	height: 100%;
+	padding: 1rem 0 0 1rem;
 	outline: none;
-	margin: 0;
+}
+
+.question-mark-decoration {
+	color: var(--gray-4);
 	font-family: var(--font-mono);
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
 }
 
-#pattern-question-mark {
-	font-family: var(--font-mono);
-	font-size: 16px;
-	font-weight: bold;
-	color: var(--gray-5);
-	user-select: none;
-}
-
-.pattern-outline {
-	outline: 2px solid var(--gray-5);
-}
-
-.ast-strlit-node {
-	color: var(--orange);
-	/* background: var(--light-orange); */
-}
-
-.ast-patcode-node {
+.syntax-string {
 	color: var(--orange);
 }
 
-.ast-repcount-node {
+.syntax-escape {
+	color: var(--yellow);
+}
+
+.syntax-number {
 	color: var(--blue);
 }
 
-.ast-alternation-node {
-	color: var(--green);
-	background: var(--light-green);
+.cm-range-highlight {
+	background: red;
 }

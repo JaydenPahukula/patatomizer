@@ -6,10 +6,21 @@
 		"dev": "vite",
 		"build": "vite build",
 		"preview": "vite preview",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"lezer-generate": "lezer-generator src/codemirror/pattern.grammar -o src/codemirror/parser.js"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@codemirror/highlight": "^0.19.8",
+		"@codemirror/language": "^6.12.1",
+		"@codemirror/state": "^6.5.3",
+		"@codemirror/view": "^6.39.7",
+		"@lezer/highlight": "^1.2.3",
+		"@lezer/lr": "^1.4.5",
+		"codemirror": "^6.0.2",
+		"typescript": "^5.9.3"
+	},
 	"devDependencies": {
+		"@lezer/generator": "^1.8.0",
 		"prettier": "^3.6.2",
 		"vite": "^7.1.2",
 		"vite-plugin-html-inject": "^1.1.2"
