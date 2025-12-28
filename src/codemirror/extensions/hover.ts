@@ -1,9 +1,10 @@
 import { syntaxTree } from '@codemirror/language';
 import { type Extension } from '@codemirror/state';
 import { EditorView, ViewPlugin } from '@codemirror/view';
-import type { Tree } from '@lezer/common';
-import { setScopeOutlineRangeEffect } from 'src/codemirror/extensions/scopeoutline';
+import type { SyntaxNode, Tree } from '@lezer/common';
+import { setNodeOutlineEffect } from 'src/codemirror/extensions/nodeoutline';
 import { Alternation, Escdoublequote, Patcode, Repcount, Strlit } from 'src/codemirror/parser.terms';
+import { outlinedNodeState } from 'src/state/outlinednode';
 
 // only certain nodes should be highlighted when hovered
 function isTerminal(nodeType: number) {
@@ -17,7 +18,7 @@ function isTerminal(nodeType: number) {
 }
 
 // Find the range of the innermost terminal node
-function findNodeRange(tree: Tree, pos: number): { from: number; to: number } | null {
+function findNode(tree: Tree, pos: number): SyntaxNode | null {
 	let node = tree.resolve(pos, 1);
 	while (!isTerminal(node.type.id)) {
 		if (node.parent === null) return null;
@@ -35,9 +36,7 @@ export const hoverExtension: Extension = ViewPlugin.fromClass(
 			if (this.lastPos === null) return;
 			// clear
 			this.lastPos = null;
-			view.dispatch({
-				effects: setScopeOutlineRangeEffect.of(null),
-			});
+			outlinedNodeState.set(null);
 		}
 
 		handleMouseMove(event: MouseEvent, view: EditorView) {
@@ -59,10 +58,8 @@ export const hoverExtension: Extension = ViewPlugin.fromClass(
 
 			// set scope outline
 			const tree = syntaxTree(view.state);
-			const range = findNodeRange(tree, pos);
-			view.dispatch({
-				effects: setScopeOutlineRangeEffect.of(range),
-			});
+			const node = findNode(tree, pos);
+			outlinedNodeState.set(node);
 		}
 	},
 	{
