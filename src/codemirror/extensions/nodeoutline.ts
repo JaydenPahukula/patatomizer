@@ -5,7 +5,7 @@ import type { SyntaxNode } from '@lezer/common';
 export const setNodeOutlineEffect = StateEffect.define<SyntaxNode | null>();
 
 const scopeOutlineDecoration = Decoration.mark({
-	class: 'syntax-scope-outline',
+	class: 'syntax-node-outline',
 });
 
 /** Codemirror extension that handles node outlines in the editor */

@@ -34,7 +34,3 @@
 .syntax-number {
 	color: var(--blue);
 }
-
-.syntax-scope-outline {
-	outline: solid 2px var(--gray-5);
-}

@@ -83,3 +83,7 @@ button {
 a {
 	cursor: pointer;
 }
+
+.syntax-node-outline {
+	outline: solid 2px var(--gray-5);
+}
