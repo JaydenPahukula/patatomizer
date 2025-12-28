@@ -1,7 +1,7 @@
 import type { Tree as Tree } from '@lezer/common';
 import type { Handler } from 'src/types/handler';
 
-/** Concrete syntax tree state */
+/** Global state for the pattern concrete syntax tree */
 export const cstState = new (class {
 	#tree: Tree | null = null;
 	#handlers = new Set<Handler<Tree>>();
@@ -20,5 +20,3 @@ export const cstState = new (class {
 		this.#handlers.add(handler);
 	}
 })();
-
-cstState.subscribe((tree) => console.log('tree updated'));

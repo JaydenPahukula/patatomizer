@@ -1,2 +1,2 @@
-import './views/pattern/pattern.js';
-import './views/sidebar/sidebar.js';
+import './views/patternsection/patternsection';
+import './views/sidebar/sidebar';

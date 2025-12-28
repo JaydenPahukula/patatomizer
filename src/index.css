@@ -1,5 +1,5 @@
 @import './views/header/header.css';
-@import './views/pattern/pattern.css';
+@import './views/patternsection/patternsection.css';
 @import './views/sidebar/sidebar.css';
 
 :root {
@@ -20,9 +20,9 @@
 	--orange: #de7309;
 	--light-orange: #f2ebb3;
 	--yellow: #e0a910;
-	--blue: #1b91f2;
 	--green: #029e16;
 	--light-green: #ddf1e0;
+	--blue: #1b91f2;
 }
 
 * {

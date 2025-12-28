@@ -1,7 +1,7 @@
 import type { SyntaxNode } from '@lezer/common';
 import type { Handler } from 'src/types/handler';
 
-/** State representing the node in the syntax tree that is currently hovered */
+/** Global state for the node in the syntax tree that is currently hovered */
 export const outlinedNodeState = new (class {
 	#node: SyntaxNode | null = null;
 	#handlers = new Set<Handler<SyntaxNode | null>>();
@@ -17,8 +17,3 @@ export const outlinedNodeState = new (class {
 		this.#handlers.add(handler);
 	}
 })();
-
-// for testing
-outlinedNodeState.subscribe((node) => {
-	console.log(node?.name);
-});
