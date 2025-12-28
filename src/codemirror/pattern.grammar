@@ -1,6 +1,6 @@
-@top Pattern { "?" Patgrp }
+@top Pattern { patgrp }
 
-Patgrp {
+patgrp {
   Patatom+
 }
 
@@ -19,7 +19,7 @@ Repcount {
 }
 
 Alternation {
-  "(" Patgrp ("," Patgrp)* ")"
+  "(" patgrp ("," patgrp)* ")"
 }
 
 Strlit {
@@ -29,20 +29,22 @@ Strlit {
 @tokens {
 
   Patcode {
-    "a" |
-    "A" |
-    "u" |
-    "U" |
-    "l" |
-    "L" |
-    "n" |
-    "N" |
-    "p" |
-    "P" |
-    "c" |
-    "C" |
-    "e" |
-    "E"
+    (
+      "a" |
+      "A" |
+      "u" |
+      "U" |
+      "l" |
+      "L" |
+      "n" |
+      "N" |
+      "p" |
+      "P" |
+      "c" |
+      "C" |
+      "e" |
+      "E"
+    )+
   }
 
   Number { $[0-9]+ }

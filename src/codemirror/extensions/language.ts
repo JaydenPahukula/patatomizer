@@ -11,6 +11,8 @@ const lrLanguage = LRLanguage.define({
 				Escdoublequote: tags.escape,
 				Repcount: tags.number,
 				Number: tags.number,
+				Patcode: tags.keyword,
+				Alternation: tags.paren,
 			}),
 		],
 	}),
@@ -20,11 +22,13 @@ const language = new LanguageSupport(lrLanguage);
 
 const highlighting = syntaxHighlighting(
 	HighlightStyle.define([
-		{ tag: tags.string, class: 'syntax-string' },
-		{ tag: tags.escape, class: 'syntax-escape' },
-		{ tag: tags.number, class: 'syntax-number' },
+		{ tag: tags.string, class: 'syntax-token syntax-string' },
+		{ tag: tags.escape, class: 'syntax-token syntax-escape' },
+		{ tag: tags.number, class: 'syntax-token syntax-number' },
+		{ tag: tags.keyword, class: 'syntax-token' },
+		{ tag: tags.paren, class: 'syntax-token' },
 	]),
 );
 
-/** Handles language parsing and syntax highlighting */
+/** Codemirror extension that handles language parsing and syntax highlighting */
 export const languageExtension: Extension = [language, highlighting];

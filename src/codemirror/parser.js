@@ -2,14 +2,14 @@
 import {LRParser} from "@lezer/lr"
 export const parser = LRParser.deserialize({
   version: 14,
-  states: "$hOQOPOOOVOPOOO_OPO'#C`OmOPO'#C`O{OPO'#C_OOOO'#Cf'#CfO!WOPO'#C^QOOOOOO!iOPO,58zOOOO,58z,58zO!wOQO'#CcOVOPO'#CeOOOO,58y,58yOOOO-E6d-E6dOOOO1G.f1G.fOOOO'#Cg'#CgO#SOQO,58}OOOO,58},58}O#_OPO,59POOOO-E6e-E6eOOOO1G.i1G.iOVOPO'#ChO#gOPO1G.kOOOO1G.k1G.kOOOO,59S,59SOOOO-E6f-E6fOOOO7+$V7+$V",
-  stateData: "#o~O^PO~OTQO_RO~O_WOUSX`SXbSX~OTXOUSX`SXbSX~OU[O`YObZO~OTQO_RO]QXcQXdQX~OT^OUSa`SabSa~OW_O`aOa_O~OW_O`dOa_O~OceOdgO~OceOdjO~O",
-  goto: "![]PP^gmPPsPsv!O!UQVPQbZRheXTPUZeXSPUZeR[SUUPZeR]UQ`YRc`QfbRif",
-  nodeNames: "⚠ Pattern Patgrp Patatom Repcount Number Patcode Strlit Escdoublequote Alternation",
-  maxTerm: 20,
+  states: "$[OQOPOOOYOPO'#C_OhOPO'#C_OvOPO'#C^OOOO'#Ce'#CeQQOPOOO!ROPO,58yOOOO,58y,58yO!aOQO'#CbOOOO,58x,58xOQOPO'#CdOOOO-E6c-E6cOOOO1G.e1G.eOOOO'#Cf'#CfO!lOQO,58|OOOO,58|,58|O!wOPO,59OOOOO-E6d-E6dOOOO1G.h1G.hO#VOPO1G.jOQOPO'#CgOOOO1G.j1G.jOOOO-E6e-E6eOOOO7+$U7+$UO#_OPO,59R",
+  stateData: "#m~OSPO]QO~O]UOTRX^RX`RX~OSVOTRX^RX`RX~OTXO^WO`YO~OS[OTRa^Ra`Ra~OV]O^_O_]O~OV]O^bO_]O~OSPO]QOadObeO~OadObgO~OSPO]QOaZabZa~O",
+  goto: "![[PP]ePPmPmp!O!U]SOTY`dh]ROTY`dhRXRQTOUZT`hQ`YRhdQ^WRa^Qc`Rfc",
+  nodeNames: "⚠ Pattern Patatom Repcount Number Patcode Strlit Escdoublequote Alternation",
+  maxTerm: 18,
   skippedNodes: [0],
   repeatNodeCount: 3,
-  tokenData: "%s~R|Or#{rs$Qsx#{xy$_yz$fz|#{|}$m}!O#{!O!P$t!P!Q#{!Q![${![!a#{!a!b%_!b!c#{!c!d%f!d!e#{!e!f%f!f!g#{!g!h%f!h!n#{!n!o%f!o!p#{!p!q%f!q!r#{!r!s%f!s!w#{!w!x%f!x#T#{#T#U%f#U#V#{#V#W%f#W#X#{#X#Y%f#Y#`#{#`#a%f#a#b#{#b#c%f#c#d#{#d#e%f#e#i#{#i#j%f#j;'S#{;'S;=`%m<%lO#{Q$QOaQ~$VP`~rs$Y~$_OW~R$fObPaQR$mOdPaQR$tOcPaQR${O_PaQR%SPTPaQ!Q![%VP%[PTP!Q![%VR%fO^PaQR%mOUPaQQ%pP;=`<%l#{",
+  tokenData: "'c~RzOr#urs#zsx#uxy$Xyz$`z|#u|}$g}!O#u!O!P$n!P!Q#u!Q![$u![!c#u!c!d%X!d!e#u!e!f%X!f!g#u!g!h%X!h!n#u!n!o%X!o!p#u!p!q%X!q!r#u!r!s%X!s!w#u!w!x%X!x#T#u#T#U%X#U#V#u#V#W%X#W#X#u#X#Y%X#Y#`#u#`#a%X#a#b#u#b#c%X#c#d#u#d#e%X#e#i#u#i#j%X#j;'S#u;'S;=`']<%lO#uQ#zO_Q~$PP^~rs$S~$XOV~R$`O`P_QR$gObP_QR$nOaP_QR$uO]P_QR$|PSP_Q!Q![%PP%UPSP!Q![%PR%`^TP_Q!c!d&[!e!f&[!g!h&[!n!o&[!p!q&[!r!s&[!w!x&[#T#U&[#V#W&[#X#Y&[#`#a&[#b#c&[#d#e&[#i#j&[P&a^TP!c!d&[!e!f&[!g!h&[!n!o&[!p!q&[!r!s&[!w!x&[#T#U&[#V#W&[#X#Y&[#`#a&[#b#c&[#d#e&[#i#j&[Q'`P;=`<%l#u",
   tokenizers: [0, 1],
   topRules: {"Pattern":[0,1]},
   tokenPrec: 0

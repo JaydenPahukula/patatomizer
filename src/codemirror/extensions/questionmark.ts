@@ -12,7 +12,7 @@ class CheckboxWidget extends WidgetType {
 	}
 }
 
-/** Displays a non-interactable question mark at the beginning of the editor */
+/** Codemirror extensions that displays a non-interactable question mark at the beginning of the editor */
 export const questionMarkExtension: Extension = ViewPlugin.fromClass(
 	class {
 		decorations = Decoration.set([
