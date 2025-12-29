@@ -14,8 +14,8 @@ Patatom {
 }
 
 Repcount {
-  Number |
-  Number? "." Number?
+  number |
+  number? "." number?
 }
 
 Alternation {
@@ -23,7 +23,11 @@ Alternation {
 }
 
 Strlit {
-  "\"" (strchar | Escdoublequote)* "\""
+  quote (strchar | Escquote)* quote
+}
+
+Escquote {
+  quote quote
 }
 
 @tokens {
@@ -47,10 +51,10 @@ Strlit {
     )+
   }
 
-  Number { $[0-9]+ }
+  quote { "\""}
+
+  number { $[0-9]+ }
 
   strchar { ![\"] }
-
-  Escdoublequote { "\"\"" }
 
 }

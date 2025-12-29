@@ -1,14 +1,10 @@
-const sidebar = document.getElementById('sidebar');
+import { doWithElement } from 'src/util/dowithelement';
 
-if (sidebar === null) {
-	console.error("Could not find element with id 'sidebar'");
-} else {
-	const classList = sidebar.classList;
-
+doWithElement('sidebar', (sidebar) => {
 	function toggleSidebar() {
-		classList.toggle('collapsed');
+		sidebar.classList.toggle('collapsed');
 	}
 
 	document.getElementById('sidebar-header-menu-button')?.addEventListener('click', toggleSidebar);
 	document.getElementById('sidebar-header-x-button')?.addEventListener('click', toggleSidebar);
-}
+});

@@ -1,28 +1,19 @@
-import type { SyntaxNode } from '@lezer/common';
-import { Stack } from '@lezer/lr';
 import { cstState } from 'src/state/cst';
+import { doWithElement } from 'src/util/dowithelement';
 
-const explainSection = document.getElementById('explain-section');
-
-if (explainSection === null) {
-	console.error("Could not find element with id 'explain-section'");
-} else {
-	const classList = explainSection.classList;
-
+doWithElement('explain-section', (explainSectionElement) => {
 	function toggleSidebar() {
-		classList.toggle('collapsed');
+		explainSectionElement.classList.toggle('collapsed');
 	}
 
 	document.getElementById('explain-section-close-button')?.addEventListener('click', toggleSidebar);
 	document.getElementById('explain-section-open-button')?.addEventListener('click', toggleSidebar);
-}
+});
 
-const explainElement = document.getElementById('explain');
-
-if (explainElement === null) {
-	console.error("Could not find element with id 'explain'");
-} else {
+doWithElement('explain', (explainElement) => {
 	cstState.subscribe((tree) => {
+		if (tree === null) return;
+
 		// clear
 		explainElement.innerHTML = '';
 
@@ -39,4 +30,4 @@ if (explainElement === null) {
 			},
 		});
 	});
-}
+});

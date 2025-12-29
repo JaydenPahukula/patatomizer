@@ -1,31 +1,8 @@
 import { syntaxTree } from '@codemirror/language';
 import { type Extension } from '@codemirror/state';
 import { EditorView, ViewPlugin } from '@codemirror/view';
-import type { SyntaxNode, Tree } from '@lezer/common';
-import { setNodeOutlineEffect } from 'src/codemirror/extensions/nodeoutline';
-import { Alternation, Escdoublequote, Patcode, Repcount, Strlit } from 'src/codemirror/parser.terms';
 import { outlinedNodeState } from 'src/state/outlinednode';
-
-// only certain nodes should be highlighted when hovered
-function isTerminal(nodeType: number) {
-	return (
-		nodeType === Repcount ||
-		nodeType === Patcode ||
-		nodeType === Strlit ||
-		nodeType === Escdoublequote ||
-		nodeType === Alternation
-	);
-}
-
-// Find the range of the innermost terminal node
-function findNode(tree: Tree, pos: number): SyntaxNode | null {
-	let node = tree.resolve(pos, 1);
-	while (!isTerminal(node.type.id)) {
-		if (node.parent === null) return null;
-		node = node.parent;
-	}
-	return node;
-}
+import { tooltipShownState } from 'src/state/tooltipshown';
 
 /** Codemirror extension that handles hovering over the pattern editor */
 export const hoverExtension: Extension = ViewPlugin.fromClass(
@@ -44,8 +21,10 @@ export const hoverExtension: Extension = ViewPlugin.fromClass(
 			const element = document.elementFromPoint(event.clientX, event.clientY);
 			if (element === null || !element.classList.contains('syntax-token')) {
 				this.clear(event, view);
+				tooltipShownState.set(false);
 				return;
 			}
+			tooltipShownState.set(true);
 
 			// get hover position
 			const posAndAssoc = view.posAndSideAtCoords({ x: event.clientX, y: event.clientY });
@@ -58,7 +37,7 @@ export const hoverExtension: Extension = ViewPlugin.fromClass(
 
 			// set scope outline
 			const tree = syntaxTree(view.state);
-			const node = findNode(tree, pos);
+			const node = tree.resolve(pos, 1);
 			outlinedNodeState.set(node);
 		}
 	},

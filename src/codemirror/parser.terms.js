@@ -3,8 +3,7 @@ export const
   Pattern = 1,
   Patatom = 2,
   Repcount = 3,
-  Number = 4,
-  Patcode = 5,
-  Strlit = 6,
-  Escdoublequote = 7,
-  Alternation = 8
+  Patcode = 4,
+  Strlit = 5,
+  Escquote = 6,
+  Alternation = 7
