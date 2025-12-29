@@ -1,0 +1,30 @@
+#explain-section > #explain {
+	height: 40vh;
+	transition: height 0.3s;
+}
+#explain-section.collapsed > #explain {
+	height: 0;
+}
+
+#explain-section-close-button,
+#explain-section-open-button {
+	background: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 38px;
+}
+
+#explain-section.collapsed #explain-section-close-button {
+	display: none;
+}
+
+#explain-section:not(.collapsed) #explain-section-open-button {
+	display: none;
+}
+
+#explain {
+	overflow-y: auto;
+	padding: 24px;
+}

@@ -10,7 +10,7 @@ import { nodeOutlineExtension, setNodeOutlineEffect } from 'src/codemirror/exten
 import { outlinedNodeState } from 'src/state/outlinednode';
 
 const parentElement = document.getElementById('pattern-editor-parent');
-if (parentElement === null) throw new Error("Could not find element with id 'pattern-editor'");
+if (parentElement === null) console.error("Could not find element with id 'pattern-editor'");
 
 export const patternEditorView = new EditorView({
 	state: EditorState.create({
@@ -25,7 +25,7 @@ export const patternEditorView = new EditorView({
 		],
 		doc: '1ACL1."as""df".3(1"a",2"b")',
 	}),
-	parent: parentElement,
+	parent: parentElement ?? document.body,
 });
 
 outlinedNodeState.subscribe((node) => {

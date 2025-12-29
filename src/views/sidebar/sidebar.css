@@ -1,5 +1,6 @@
 #sidebar {
 	background-color: var(--gray-1);
+	flex-shrink: 0;
 	color: var(--gray-6);
 	box-shadow: rgba(0, 0, 0, 0.45) 1px 2px 8px 0px;
 	width: 25%;
@@ -11,11 +12,12 @@
 		min-width 0.3s;
 }
 #sidebar.collapsed {
-	width: 52px;
+	width: 56px;
 	min-width: 0;
 }
 
 #sidebar > header {
+	height: 46px;
 	border-bottom: solid 1px var(--gray-2);
 	display: flex;
 	align-items: center;
@@ -39,44 +41,27 @@
 }
 
 #sidebar-header-menu-button {
-	padding: 8px 14px;
-	margin: 4px;
+	width: 56px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: none;
-}
-#sidebar-header-menu-button > svg {
-	height: 16px;
-	width: 16px;
-	stroke-width: 5px;
-	stroke: var(--gray-3);
-	transition: stroke 0.2s;
-}
-#sidebar-header-menu-button:hover > svg,
-#sidebar-header-menu-button:active > svg,
-#sidebar-header-menu-button:focus-visible > svg {
-	stroke: var(--gray-7);
+	flex-shrink: 0;
 }
 
 #sidebar-header-x-button {
-	padding: 8px 10px;
-	margin: 4px;
+	width: 44px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background: none;
 	transition:
 		opacity 0.2s,
 		visibility 0.2s;
 }
-#sidebar-header-x-button > svg {
-	height: 16px;
-	width: 16px;
-	stroke-linecap: butt; /* heehee */
-	stroke-width: 5px;
-	stroke: var(--gray-3);
-	transition: stroke 0.2s;
-}
-#sidebar-header-x-button:hover > svg,
-#sidebar-header-x-button:active > svg,
-#sidebar-header-x-button:focus-visible > svg {
-	stroke: var(--gray-7);
-}
+
 #sidebar.collapsed #sidebar-header-x-button {
 	visibility: hidden;
 	opacity: 0;

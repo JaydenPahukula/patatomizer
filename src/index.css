@@ -1,6 +1,8 @@
 @import './views/header/header.css';
 @import './views/patternsection/patternsection.css';
+@import './views/explainsection/explainsection.css';
 @import './views/sidebar/sidebar.css';
+@import './ui/icons.css';
 
 :root {
 	--font-sans: 'Roboto Condensed', sans-serif;
@@ -38,6 +40,10 @@ body {
 	flex-direction: column;
 }
 
+:focus-visible {
+	outline-offset: -2px;
+}
+
 #page {
 	flex-grow: 1;
 	background-color: var(--gray-7);
@@ -48,6 +54,8 @@ body {
 	flex-grow: 1;
 	overflow: hidden;
 	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 #page-content > section {
@@ -59,7 +67,8 @@ body {
 	height: 40px;
 	display: flex;
 	align-items: center;
-	padding: 0 16px;
+	justify-content: space-between;
+	padding: 0 0 0 16px;
 	background: var(--gray-5);
 }
 
@@ -69,15 +78,10 @@ body {
 	font-weight: bold;
 }
 
-svg {
-	stroke-linecap: round;
-	stroke-linejoin: round;
-	flex-shrink: 0;
-}
-
 button {
 	border: none;
 	cursor: pointer;
+	padding: 0;
 }
 
 a {

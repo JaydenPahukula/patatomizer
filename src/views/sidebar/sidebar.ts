@@ -1,8 +1,14 @@
 const sidebar = document.getElementById('sidebar');
 
-function toggleSidebar() {
-	sidebar?.classList.toggle('collapsed');
-}
+if (sidebar === null) {
+	console.error("Could not find element with id 'sidebar'");
+} else {
+	const classList = sidebar.classList;
 
-document.getElementById('sidebar-header-menu-button')?.addEventListener('click', toggleSidebar);
-document.getElementById('sidebar-header-x-button')?.addEventListener('click', toggleSidebar);
+	function toggleSidebar() {
+		classList.toggle('collapsed');
+	}
+
+	document.getElementById('sidebar-header-menu-button')?.addEventListener('click', toggleSidebar);
+	document.getElementById('sidebar-header-x-button')?.addEventListener('click', toggleSidebar);
+}

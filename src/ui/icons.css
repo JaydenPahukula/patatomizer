@@ -1,0 +1,41 @@
+#icons {
+	display: none;
+}
+
+.icon,
+.icon-light,
+.icon-dark {
+	width: 16px;
+	height: 16px;
+	flex-shrink: 0;
+	stroke-width: 5px;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transition: stroke 0.2s;
+}
+
+.icon-light {
+	stroke: var(--gray-3);
+}
+
+.icon-light:hover,
+.icon-light:active,
+.icon-light:focus-visible,
+button:hover > .icon-light,
+button:active > .icon-light,
+button:focus-visible > .icon-light {
+	stroke: var(--gray-7);
+}
+
+.icon-dark {
+	stroke: var(--gray-3);
+}
+
+.icon-dark:hover,
+.icon-dark:active,
+.icon-dark:focus-visible,
+button:hover > .icon-dark,
+button:active > .icon-dark,
+button:focus-visible > .icon-dark {
+	stroke: var(--gray-7);
+}
