@@ -4,6 +4,7 @@
 }
 #explain-section.collapsed > #explain {
 	height: 0;
+	padding: 0;
 }
 
 #explain-section-close-button,
