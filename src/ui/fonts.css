@@ -1,0 +1,43 @@
+/* Roboto Condensed Normal - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Roboto Condensed';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('/assets/fonts/roboto-condensed-v31-latin-regular.woff2') format('woff2'),
+		url('/assets/fonts/roboto-condensed-v31-latin-regular.woff') format('woff');
+}
+
+/* Roboto Condensed Bold - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Roboto Condensed';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('/assets/fonts/roboto-condensed-v31-latin-700.woff2') format('woff2'),
+		url('/assets/fonts/roboto-condensed-v31-latin-700.woff') format('woff');
+}
+
+/* Source Code Pro Normal - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Source Code Pro';
+	font-style: normal;
+	font-weight: 400;
+	src:
+		url('/assets/fonts/source-code-pro-v31-latin-regular.woff2') format('woff2'),
+		url('/assets/fonts/source-code-pro-v31-latin-regular.woff') format('woff');
+}
+
+/* Source Code Pro Bold - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'Source Code Pro';
+	font-style: normal;
+	font-weight: 700;
+	src:
+		url('/assets/fonts/source-code-pro-v31-latin-700.woff2') format('woff2'),
+		url('/assets/fonts/source-code-pro-v31-latin-700.woff') format('woff');
+}

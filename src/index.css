@@ -3,6 +3,7 @@
 @import './views/explainsection/explainsection.css';
 @import './views/sidebar/sidebar.css';
 @import './ui/icons.css';
+@import './ui/fonts.css';
 
 :root {
 	--font-sans: 'Roboto Condensed', sans-serif;
