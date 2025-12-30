@@ -13,7 +13,7 @@ const lrLanguage = LRLanguage.define({
 				Repcount: tags.number,
 				Patcode: tags.keyword,
 				Alternation: tags.paren,
-				// '⚠': tags.invalid,
+				'⚠': tags.invalid,
 			}),
 		],
 	}),
@@ -28,7 +28,7 @@ const highlighting = syntaxHighlighting(
 		{ tag: tags.number, class: 'syntax-token syntax-number' },
 		{ tag: tags.keyword, class: 'syntax-token' },
 		{ tag: tags.paren, class: 'syntax-token' },
-		// { tag: tags.invalid, class: 'syntax-token syntax-invalid' },
+		{ tag: tags.invalid, class: 'syntax-token syntax-invalid' },
 	]),
 );
 
@@ -36,8 +36,7 @@ const linting = linter(
 	(view) => {
 		syntaxTree(view.state).iterate({
 			enter(node) {
-				// if (node.node.type.isError)
-				console.log(node.node.name, node.from, node.to);
+				// console.log(node.node.name, node.from, node.to);
 			},
 		});
 		return [

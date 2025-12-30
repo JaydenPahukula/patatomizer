@@ -18,9 +18,7 @@ export class State<T> {
 
 		this.#value = value;
 
-		if (value !== null) {
-			for (const fn of this.#handlers) fn(value);
-		}
+		for (const fn of this.#handlers) fn(value);
 	}
 
 	subscribe(handler: Handler<T>) {

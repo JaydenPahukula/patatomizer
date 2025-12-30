@@ -68,3 +68,8 @@
 	margin: 0;
 	color: var(--gray-7);
 }
+
+.cm-lintRange-error {
+	background-image: none !important; /* Remove default wavy line */
+	border-bottom: 3px solid var(--red) !important;
+}
