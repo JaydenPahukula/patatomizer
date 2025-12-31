@@ -1,10 +1,16 @@
 <section id="pattern-section">
 	<header class="header"><h2>Pattern</h2></header>
-	<div id="pattern-editor-parent"></div>
-	<div id="pattern-editor-tooltip" hidden>
-		<div style="position: fixed">
-			<svg viewBox="0 0 2 2"><polygon points="0,2 1,0 2,2"></polygon></svg>
+	<div id="pattern-section-content">
+		<div id="pattern-editor-tooltip" hidden>
+			<div style="position: fixed">
+				<svg viewBox="0 0 2 2"><polygon points="0,2 1,0 2,2"></polygon></svg>
+			</div>
+			<p id="pattern-editor-tooltip-text"></p>
 		</div>
-		<p id="pattern-editor-tooltip-text"></p>
+		<div id="pattern-editor-parent"></div>
+		<div id="pattern-editor-error" hidden>
+			<div id="pattern-editor-error-gradient"></div>
+			<p>ERROR</p>
+		</div>
 	</div>
 </section>

@@ -11,6 +11,10 @@ import { outlinedNodeState } from 'src/state/outlinednode';
 import { doWithElement, doWithElements } from 'src/util/dowithelement';
 import { tooltipShownState } from 'src/state/tooltipshown';
 import type { SyntaxNode } from '@lezer/common';
+import { syntaxErrorState } from 'src/state/syntaxerror';
+import { cstState } from 'src/state/cst';
+import { forEachDiagnostic } from '@codemirror/lint';
+import { lintExtension } from 'src/codemirror/extensions/lint';
 
 const parentElement = document.getElementById('pattern-editor-parent');
 if (parentElement === null) console.error("Could not find element with id 'pattern-editor'");
@@ -21,6 +25,7 @@ export const patternEditorView = new EditorView({
 			minimalSetup,
 			hoverExtension,
 			languageExtension,
+			lintExtension,
 			oneLineExtension,
 			questionMarkExtension,
 			nodeOutlineExtension,
@@ -35,6 +40,22 @@ export const patternEditorView = new EditorView({
 outlinedNodeState.subscribe((node) => {
 	patternEditorView.dispatch({
 		effects: setNodeOutlineEffect.of(node),
+	});
+});
+
+// hide tooltip when cst updates
+cstState.subscribe(() => {
+	tooltipShownState.set(false);
+});
+
+doWithElement('pattern-editor-error', (errorElement) => {
+	// update error notification
+	syntaxErrorState.subscribe((error) => {
+		if (error) {
+			errorElement.removeAttribute('hidden');
+		} else {
+			errorElement.setAttribute('hidden', '');
+		}
 	});
 });
 
@@ -63,7 +84,7 @@ doWithElements(
 			tooltip.removeAttribute('hidden');
 
 			// update text
-			tooltipText.innerHTML = getTextFromNode(node);
+			tooltipText.innerHTML = getTooltipInnerHTML(node);
 
 			// move tooltip
 			const fromRect = patternEditorView.coordsAtPos(node.from);
@@ -85,6 +106,16 @@ doWithElements(
 	},
 );
 
-function getTextFromNode(node: SyntaxNode) {
+function getTooltipInnerHTML(node: SyntaxNode) {
+	// check if error
+	let errorHTML = '';
+	forEachDiagnostic(patternEditorView.state, (d, from, to) => {
+		if (errorHTML) return;
+		if (node.to > from && node.from < to) {
+			errorHTML = '<b class="error">ERROR:</b> ' + d.message;
+		}
+	});
+	if (errorHTML) return errorHTML;
+
 	return node.name;
 }

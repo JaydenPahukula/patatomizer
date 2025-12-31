@@ -2,15 +2,62 @@
 	background: var(--accent);
 }
 
+#pattern-section-content {
+	display: flex;
+	align-items: center;
+	overflow-x: hidden;
+}
+
+#pattern-editor-tooltip {
+	min-width: 200px;
+	max-width: 320px;
+	background: var(--gray-0);
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	z-index: 50;
+	pointer-events: none;
+}
+#pattern-editor-tooltip[hidden] {
+	display: none;
+}
+
+/* tooltip arrow */
+#pattern-editor-tooltip svg {
+	fill: var(--gray-0);
+	stroke: none;
+	position: relative;
+	top: -12px;
+	width: 13px;
+	height: 13px;
+}
+
+#pattern-editor-tooltip-text {
+	width: 100%;
+	padding: 12px;
+	margin: 0;
+	color: var(--gray-7);
+	font-size: 17px;
+}
+#pattern-editor-tooltip-text > b.error {
+	color: var(--red);
+}
+
 #pattern-editor-parent {
 	height: 62px;
 	width: 100%;
+	overflow-x: hidden;
 }
 
 #pattern-editor-parent > .cm-editor {
 	height: 100%;
-	padding: 1rem 0 0 1rem;
 	outline: none;
+}
+
+#pattern-editor-parent > .cm-editor > .cm-scroller {
+	padding: 1rem 1rem 0 1rem;
+	overflow: auto hidden;
 }
 
 #pattern-editor-parent .cm-content {
@@ -35,41 +82,32 @@
 	color: var(--blue);
 }
 
-/* .syntax-invalid {
-	border-bottom: solid var(--red) 3px;
-} */
-
-#pattern-editor-tooltip {
-	width: 220px;
-	background: var(--gray-0);
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	z-index: 50;
-	pointer-events: none;
-}
-#pattern-editor-tooltip[hidden] {
-	display: none;
-}
-
-#pattern-editor-tooltip svg {
-	fill: var(--gray-0);
-	stroke: none;
-	position: relative;
-	top: -12px;
-	width: 13px;
-	height: 13px;
-}
-
-#pattern-editor-tooltip-text {
-	width: 100%;
-	padding: 10px;
-	margin: 0;
-	color: var(--gray-7);
-}
-
 .cm-lintRange-error {
 	background-image: none !important; /* Remove default wavy line */
 	border-bottom: 3px solid var(--red) !important;
+}
+
+#pattern-editor-error {
+	display: flex;
+	flex-direction: row;
+	pointer-events: none;
+}
+#pattern-editor-error[hidden] {
+	display: none;
+}
+
+#pattern-editor-error-gradient {
+	margin: 0 0 0 -2rem;
+	width: 2rem;
+	height: 2rem;
+	background: linear-gradient(90deg, #fff0 0%, var(--gray-7) 100%);
+	z-index: 10;
+}
+
+#pattern-editor-error > p {
+	padding: 8px 10px;
+	margin: 0 12px;
+	background: var(--red);
+	color: var(--gray-7);
+	font-weight: bold;
 }

@@ -13,13 +13,17 @@ Patatom {
   )
 }
 
+Patcode {
+  Patcodechar+
+}
+
 Repcount {
   number |
   number? "." number?
 }
 
 Alternation {
-  "(" patgrp ("," patgrp)* ")"
+  "(" (patgrp ("," patgrp)*)? ")"
 }
 
 Strlit {
@@ -32,29 +36,13 @@ Escquote {
 
 @tokens {
 
-  Patcode {
-    (
-      "a" |
-      "A" |
-      "u" |
-      "U" |
-      "l" |
-      "L" |
-      "n" |
-      "N" |
-      "p" |
-      "P" |
-      "c" |
-      "C" |
-      "e" |
-      "E"
-    )+
+  Patcodechar {
+    $[aulnpceAULNPCE]
   }
 
-  quote { "\""}
+  quote { "\"" }
 
   number { $[0-9]+ }
 
   strchar { ![\"] }
-
 }

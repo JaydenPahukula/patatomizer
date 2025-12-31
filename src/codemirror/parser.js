@@ -2,14 +2,14 @@
 import {LRParser} from "@lezer/lr"
 export const parser = LRParser.deserialize({
   version: 14,
-  states: "$hOQOPOOOYOPO'#C_OhOPO'#C_OvOPO'#C^OOOO'#Cd'#CdQQOPOOO!ROPO,58yOOOO,58y,58yO!aOQO'#CaOOOO,58x,58xOQOPO'#CcOOOO-E6b-E6bOOOO1G.e1G.eO!iOPO,58{OOOO'#Ce'#CeO!}OQO,58{O#VOPO,58}OOOO,58|,58|O#eOPO1G.gOOOO-E6c-E6cO#yOPO1G.iOQOPO'#CfOOOO1G.i1G.iP$ROPO'#CbOOOO-E6d-E6dOOOO7+$T7+$TO$WOPO,59Q",
-  stateData: "$f~O[PO]QO~O]UOSRX^RX`RX~O[VOSRX^RX`RX~OSXO^WO`YO~O[[OSRa^Ra`Ra~O^]O_^O~O^aOZTa[Ta]TaaTabTa~O^bO_^O~O[PO]QOaeObfO~O^aOZTi[Ti]TiaTibTi~OaeObiO~O^aO~O[PO]QOaYabYa~O",
-  goto: "!_ZPP[dPlols!R!X]SOTY`ej]ROTY`ejRXRT^W_QTOUZT`jQ`YRjeQ_WRc_Qd`Rhd",
-  nodeNames: "⚠ Pattern Patatom Repcount Patcode Strlit Escquote Alternation",
-  maxTerm: 18,
+  states: "%QOQOPOOOYOPO'#C_OhOPO'#C_OvOPO'#C^OOOO'#Ce'#CeQQOPOOO!ROPO,58yOOOO,58y,58yOOOO'#Cf'#CfO!aOPO'#C`O!uOQO'#CbO!}OPO'#CdOOOO,58x,58xOOOO-E6c-E6cOOOO1G.e1G.eOOOO-E6d-E6dO#YOPO,58|OOOO'#Cg'#CgO#nOQO,58|OOOO,59O,59OO#vOPO,59OOOOO,58},58}O$UOPO1G.hOOOO-E6e-E6eO$jOPO1G.jOQOPO'#ChOOOO1G.j1G.jP$rOPO'#CcOOOO-E6f-E6fOOOO7+$U7+$UO$wOPO,59S",
+  stateData: "%V~O^PO_QO~O_UOTRX`RXbRX~O^VOTRX`RXbRX~OTWO`YObZO~O^^OTRa`RabRa~OTWO]SX^SX_SXcSXdSX~O``OaaO~O^PO_QOdcO~O`eO]Ua^Ua_UacUadUa~O`fOaaO~O^PO_QOciOdjO~O`eO]Ui^Ui_UicUidUi~OciOdmO~O`eO~O^PO_QOc[ad[a~O",
+  goto: "!g]PP^fnPnqnu!T!Z!a]SOTZdin]ROTZdinR[RTaYbQTOU]TdnQdZRniQXRR_XQbYRgbQhdRlh",
+  nodeNames: "⚠ Pattern Patatom Repcount Patcode Patcodechar Strlit Escquote Alternation",
+  maxTerm: 20,
   skippedNodes: [0],
-  repeatNodeCount: 3,
-  tokenData: "'Z~RzOr#urs#zsx#uxy$Pyz$Wz|#u|}$_}!O#u!O!P$f!P!Q#u!Q![$m![!c#u!c!d%P!d!e#u!e!f%P!f!g#u!g!h%P!h!n#u!n!o%P!o!p#u!p!q%P!q!r#u!r!s%P!s!w#u!w!x%P!x#T#u#T#U%P#U#V#u#V#W%P#W#X#u#X#Y%P#Y#`#u#`#a%P#a#b#u#b#c%P#c#d#u#d#e%P#e#i#u#i#j%P#j;'S#u;'S;=`'T<%lO#uQ#zO_Q~$PO^~R$WO`P_QR$_ObP_QR$fOaP_QR$mO]P_QR$tP[P_Q!Q![$wP$|P[P!Q![$wR%W^SP_Q!c!d&S!e!f&S!g!h&S!n!o&S!p!q&S!r!s&S!w!x&S#T#U&S#V#W&S#X#Y&S#`#a&S#b#c&S#d#e&S#i#j&SP&X^SP!c!d&S!e!f&S!g!h&S!n!o&S!p!q&S!r!s&S!w!x&S#T#U&S#V#W&S#X#Y&S#`#a&S#b#c&S#d#e&S#i#j&SQ'WP;=`<%l#u",
+  repeatNodeCount: 4,
+  tokenData: "%^~RzOr#urs#zsx#uxy$Pyz$Wz|#u|}$_}!O#u!O!P$f!P!Q#u!Q![$m![!c#u!c!d%P!d!e#u!e!f%P!f!g#u!g!h%P!h!n#u!n!o%P!o!p#u!p!q%P!q!r#u!r!s%P!s!w#u!w!x%P!x#T#u#T#U%P#U#V#u#V#W%P#W#X#u#X#Y%P#Y#`#u#`#a%P#a#b#u#b#c%P#c#d#u#d#e%P#e#i#u#i#j%P#j;'S#u;'S;=`%W<%lO#uQ#zOaQ~$PO`~R$WObPaQR$_OdPaQR$fOcPaQR$mO_PaQR$tP^PaQ!Q![$wP$|P^P!Q![$wR%WOTPaQQ%ZP;=`<%l#u",
   tokenizers: [0, 1],
   topRules: {"Pattern":[0,1]},
   tokenPrec: 0

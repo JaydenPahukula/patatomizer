@@ -1,8 +1,12 @@
 import { HighlightStyle, LanguageSupport, LRLanguage, syntaxHighlighting, syntaxTree } from '@codemirror/language';
-import { linter } from '@codemirror/lint';
+import { linter, type Diagnostic } from '@codemirror/lint';
 import { type Extension } from '@codemirror/state';
+import type { SyntaxNode, SyntaxNodeRef, TreeCursor } from '@lezer/common';
 import { styleTags, tags } from '@lezer/highlight';
 import { parser } from 'src/codemirror/parser';
+import { Alternation, Patatom } from 'src/codemirror/parser.terms';
+import { cstState } from 'src/state/cst';
+import { syntaxErrorState } from 'src/state/syntaxerror';
 
 const lrLanguage = LRLanguage.define({
 	parser: parser.configure({
@@ -12,6 +16,8 @@ const lrLanguage = LRLanguage.define({
 				Escquote: tags.escape,
 				Repcount: tags.number,
 				Patcode: tags.keyword,
+				Patcodechar: tags.keyword,
+				Invalidpatcodechar: tags.keyword,
 				Alternation: tags.paren,
 				'⚠': tags.invalid,
 			}),
@@ -32,24 +38,5 @@ const highlighting = syntaxHighlighting(
 	]),
 );
 
-const linting = linter(
-	(view) => {
-		syntaxTree(view.state).iterate({
-			enter(node) {
-				// console.log(node.node.name, node.from, node.to);
-			},
-		});
-		return [
-			{
-				from: 0,
-				to: 5,
-				severity: 'error',
-				message: 'Error message',
-			},
-		];
-	},
-	{ delay: 0, tooltipFilter: () => [] },
-);
-
 /** Codemirror extension that handles language parsing and syntax highlighting */
-export const languageExtension: Extension = [language, highlighting, linting];
+export const languageExtension: Extension = [language, highlighting];

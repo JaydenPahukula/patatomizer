@@ -4,6 +4,7 @@ export const
   Patatom = 2,
   Repcount = 3,
   Patcode = 4,
-  Strlit = 5,
-  Escquote = 6,
-  Alternation = 7
+  Patcodechar = 5,
+  Strlit = 6,
+  Escquote = 7,
+  Alternation = 8
