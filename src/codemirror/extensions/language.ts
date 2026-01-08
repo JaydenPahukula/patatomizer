@@ -1,12 +1,7 @@
 import { HighlightStyle, LanguageSupport, LRLanguage, syntaxHighlighting, syntaxTree } from '@codemirror/language';
-import { linter, type Diagnostic } from '@codemirror/lint';
 import { type Extension } from '@codemirror/state';
-import type { SyntaxNode, SyntaxNodeRef, TreeCursor } from '@lezer/common';
 import { styleTags, tags } from '@lezer/highlight';
 import { parser } from 'src/codemirror/parser';
-import { Alternation, Patatom } from 'src/codemirror/parser.terms';
-import { cstState } from 'src/state/cst';
-import { syntaxErrorState } from 'src/state/syntaxerror';
 
 const lrLanguage = LRLanguage.define({
 	parser: parser.configure({
@@ -18,7 +13,8 @@ const lrLanguage = LRLanguage.define({
 				Patcode: tags.keyword,
 				Patcodechar: tags.keyword,
 				Invalidpatcodechar: tags.keyword,
-				Alternation: tags.paren,
+				OpenParen: tags.paren,
+				CloseParen: tags.paren,
 				'⚠': tags.invalid,
 			}),
 		],

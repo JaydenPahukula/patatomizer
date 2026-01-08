@@ -111,7 +111,7 @@ function getTooltipInnerHTML(node: SyntaxNode) {
 	let errorHTML = '';
 	forEachDiagnostic(patternEditorView.state, (d, from, to) => {
 		if (errorHTML) return;
-		if (node.to > from && node.from < to) {
+		if (node.to === to && node.from === from) {
 			errorHTML = '<b class="error">ERROR:</b> ' + d.message;
 		}
 	});

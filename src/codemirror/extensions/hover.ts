@@ -36,8 +36,7 @@ export const hoverExtension: Extension = ViewPlugin.fromClass(
 			this.lastPos = pos;
 
 			// set scope outline
-			const tree = syntaxTree(view.state);
-			const node = tree.resolve(pos, 1);
+			const node = syntaxTree(view.state).resolve(pos, 1);
 			outlinedNodeState.set(node);
 		}
 	},

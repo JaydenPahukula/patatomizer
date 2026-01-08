@@ -23,7 +23,7 @@ Repcount {
 }
 
 Alternation {
-  "(" (patgrp ("," patgrp)*)? ")"
+  OpenParen (patgrp ("," patgrp)*)? CloseParen
 }
 
 Strlit {
@@ -38,6 +38,14 @@ Escquote {
 
   Patcodechar {
     $[aulnpceAULNPCE]
+  }
+
+  OpenParen {
+    "("
+  }
+
+  CloseParen {
+    ")"
   }
 
   quote { "\"" }

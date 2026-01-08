@@ -7,4 +7,6 @@ export const
   Patcodechar = 5,
   Strlit = 6,
   Escquote = 7,
-  Alternation = 8
+  Alternation = 8,
+  OpenParen = 9,
+  CloseParen = 10
