@@ -1,5 +1,5 @@
-import { type Extension } from '@codemirror/state';
 import { syntaxTree } from '@codemirror/language';
+import { type Extension } from '@codemirror/state';
 import { EditorView } from 'codemirror';
 import { cstState } from 'src/state/cst';
 

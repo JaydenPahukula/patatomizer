@@ -10,7 +10,6 @@
 		"lezer-generate": "lezer-generator src/codemirror/pattern.grammar -o src/codemirror/parser.js"
 	},
 	"dependencies": {
-		"@codemirror/highlight": "^0.19.8",
 		"@codemirror/language": "^6.12.1",
 		"@codemirror/lint": "^6.9.2",
 		"@codemirror/state": "^6.5.3",
@@ -18,16 +17,20 @@
 		"@lezer/common": "^1.5.0",
 		"@lezer/highlight": "^1.2.3",
 		"@lezer/lr": "^1.4.5",
-		"codemirror": "^6.0.2",
-		"typescript": "^5.9.3"
+		"codemirror": "^6.0.2"
 	},
 	"devDependencies": {
 		"@lezer/generator": "^1.8.0",
 		"prettier": "^3.6.2",
+		"prettier-plugin-organize-imports": "^4.3.0",
+		"typescript": "^5.9.3",
 		"vite": "^7.1.2",
 		"vite-plugin-html-inject": "^1.1.2"
 	},
 	"prettier": {
+		"plugins": [
+			"prettier-plugin-organize-imports"
+		],
 		"printWidth": 120,
 		"useTabs": true,
 		"semi": true,

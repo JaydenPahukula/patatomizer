@@ -1,32 +1,14 @@
-import type { Tree as Tree } from '@lezer/common';
+import type { Tree } from '@lezer/common';
+import { treeToString } from 'src/codemirror/util/treetostring';
 import { State } from 'src/state/state';
 
 /** Global state for the pattern concrete syntax tree */
 export const cstState = new State<Tree | null>(null);
 
-// debug
-cstState.subscribe((tree) => {
-	if (tree === null) return;
-	const cursor = tree.cursor();
-	const lines: string[] = [];
-
-	function recurse(prefix: string = '') {
-		const hasNext = cursor.node.nextSibling != null;
-		lines.push(
-			prefix + (hasNext ? '├─ ' : '└─ ') + (cursor.type.name || '(anonymous)') + ` [${cursor.from}-${cursor.to}]`,
-		);
-
-		prefix += hasNext ? '│  ' : '   ';
-
-		if (cursor.firstChild()) {
-			do {
-				recurse(prefix);
-			} while (cursor.nextSibling());
-			cursor.parent();
+if (import.meta.env.DEV) {
+	cstState.subscribe((tree) => {
+		if (tree !== null) {
+			console.log(treeToString(tree));
 		}
-	}
-
-	recurse();
-	// console.clear();
-	console.log(lines.join('\n'));
-});
+	});
+}

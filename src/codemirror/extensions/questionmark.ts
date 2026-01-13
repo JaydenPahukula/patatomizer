@@ -1,6 +1,5 @@
-import { WidgetType } from '@codemirror/view';
-import { Decoration, ViewPlugin } from '@codemirror/view';
 import { type Extension } from '@codemirror/state';
+import { Decoration, ViewPlugin, WidgetType } from '@codemirror/view';
 
 class CheckboxWidget extends WidgetType {
 	toDOM() {

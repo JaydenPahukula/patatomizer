@@ -1,4 +1,4 @@
-import { HighlightStyle, LanguageSupport, LRLanguage, syntaxHighlighting, syntaxTree } from '@codemirror/language';
+import { HighlightStyle, LanguageSupport, LRLanguage, syntaxHighlighting } from '@codemirror/language';
 import { type Extension } from '@codemirror/state';
 import { styleTags, tags } from '@lezer/highlight';
 import { parser } from 'src/codemirror/parser';
