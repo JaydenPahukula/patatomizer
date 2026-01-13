@@ -59,7 +59,6 @@ export const lintExtension: Extension = linter(
 			},
 		});
 		syntaxErrorState.set(problems.length > 0);
-		console.log(`${problems.length} errors`);
 		return problems;
 	},
 	{ delay: 0, tooltipFilter: () => [] },

@@ -108,14 +108,16 @@ doWithElements(
 
 function getTooltipInnerHTML(node: SyntaxNode) {
 	// check if error
-	let errorHTML = '';
-	forEachDiagnostic(patternEditorView.state, (d, from, to) => {
-		if (errorHTML) return;
-		if (node.to === to && node.from === from) {
-			errorHTML = '<b class="error">ERROR:</b> ' + d.message;
-		}
-	});
-	if (errorHTML) return errorHTML;
+	if (syntaxErrorState.get()) {
+		let errorHTML = '';
+		forEachDiagnostic(patternEditorView.state, (d, from, to) => {
+			if (errorHTML) return;
+			if (node.to === to && node.from === from) {
+				errorHTML = '<b class="error">ERROR:</b> ' + d.message;
+			}
+		});
+		if (errorHTML) return errorHTML;
+	}
 
 	return node.name;
 }
